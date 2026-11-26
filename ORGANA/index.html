@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7f3">
+  <title>ORGANA — estudos e rotina</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section class="profile-gate" id="profileGate" aria-labelledby="profileTitle">
+    <div class="profile-gate-card">
+      <a class="brand profile-gate-brand" href="#" aria-label="ORGANA">
+        <span class="brand-mark">O</span><span>ORGANA</span>
+      </a>
+      <p class="eyebrow">SEU ESPAÇO DE ESTUDOS</p>
+      <h1 id="profileTitle">Quem vai usar a ORGANA?</h1>
+      <p class="subheading">Escolha seu perfil para abrir seu espaço pessoal.</p>
+      <div class="profile-choices">
+        <button class="profile-choice profile-choice-ana" data-action="select-profile" data-profile="ana">
+          <span class="profile-choice-avatar">A</span>
+          <span class="profile-choice-copy"><strong>Ana</strong><span>Seu espaço pessoal</span></span>
+          <span class="profile-choice-arrow">→</span>
+        </button>
+        <button class="profile-choice profile-choice-henrique" data-action="select-profile" data-profile="henrique">
+          <span class="profile-choice-avatar">H</span>
+          <span class="profile-choice-copy"><strong>Henrique</strong><span>Seu espaço pessoal</span></span>
+          <span class="profile-choice-arrow">→</span>
+        </button>
+      </div>
+      <p class="profile-gate-note">Cada perfil mantém suas próprias tarefas, matérias e preferências.</p>
+      <p class="profile-error" id="profileError" role="alert"></p>
+    </div>
+  </section>
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="dashboard" aria-label="ORGANA, início">
+        <span class="brand-mark">O</span><span>ORGANA</span>
+      </a>
+      <p class="side-label">ESPAÇO PESSOAL</p>
+      <nav class="navigation" aria-label="Navegação principal">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span>Visão geral</button>
+        <button class="nav-link" data-page="calendar"><span class="nav-icon">▦</span>Calendário</button>
+        <button class="nav-link" data-page="routine"><span class="nav-icon">◷</span>Minha rotina</button>
+        <button class="nav-link" data-page="subjects"><span class="nav-icon">▤</span>Matérias</button>
+        <button class="nav-link" data-page="focus"><span class="nav-icon">◉</span>Foco</button>
+        <button class="nav-link" data-page="academic"><span class="nav-icon">◇</span>Provas e atividades</button>
+        <button class="nav-link" data-page="performance"><span class="nav-icon">↗</span>Desempenho</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-link" data-page="settings"><span class="nav-icon">⚙</span>Configurações</button>
+        <button class="profile" data-action="switch-profile" aria-label="Trocar perfil">
+          <div class="avatar">O</div>
+          <div><strong id="activeProfileName">Meu espaço</strong><span>Trocar perfil</span></div>
+          <span class="profile-switch-icon">⇄</span>
+        </button>
+      </div>
+    </aside>
+    <button class="sidebar-scrim" id="sidebarScrim" aria-label="Fechar menu"></button>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menuToggle" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb"><span id="breadcrumbProfile">Meu espaço</span><span class="crumb-separator">/</span><strong id="pageTitle">Visão geral</strong></div>
+        <div class="top-actions">
+          <span class="today-label" id="headerDate"></span>
+          <button class="icon-button theme-toggle" data-action="toggle-theme" aria-label="Ativar modo escuro" title="Ativar modo escuro">☾</button>
+          <button class="button button-primary button-small" data-action="new-task"><span class="new-task-icon">＋</span><span class="new-task-label">Nova tarefa</span></button>
+        </div>
+      </header>
+      <div id="content" class="content" aria-live="polite"></div>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
